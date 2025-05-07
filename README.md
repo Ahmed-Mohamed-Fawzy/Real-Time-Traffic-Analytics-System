@@ -1,132 +1,102 @@
-# Real-Time-Traffic-Analytics-System
-Real-Time Traffic Analytics System
-This project implements a Real-Time Traffic Analytics System using MATLAB. It processes video footage from traffic cameras to detect vehicles, count them, and estimate their speeds. The system is designed to handle real-world challenges such as shaky camera footage and varying lighting conditions, making it a robust solution for traffic monitoring.
-Features
+# Real-Time Traffic Analytics System
 
-Vehicle Detection: 
+This project implements a **Real-Time Traffic Analytics System** using **MATLAB**. It processes video footage from traffic cameras to detect vehicles, count them, and estimate their speeds. The system is designed to handle real-world challenges such as shaky camera footage and varying lighting conditions, making it a robust solution for traffic monitoring.
 
-Utilizes spatial domain techniques, including Gaussian smoothing and frame differencing, to accurately identify moving vehicles.
+---
 
+## Features
 
-Vibration Removal: 
+* **Vehicle Detection**
+  Utilizes spatial domain techniques, including Gaussian smoothing and frame differencing, to accurately identify moving vehicles.
 
-Employs frequency domain processing with Fast Fourier Transform (FFT) to stabilize footage from shaky cameras, ensuring reliable analysis.
+* **Vibration Removal**
+  Employs frequency domain processing with Fast Fourier Transform (FFT) to stabilize shaky camera footage.
 
+* **Background Subtraction**
+  Implements an adaptive median filtering approach for robust background modeling and foreground extraction.
 
-Background Subtraction: 
+* **Vehicle Tracking**
+  Tracks detected vehicles across frames to count them and estimate their speeds.
 
-Implements an adaptive median filtering approach for robust background modeling and foreground extraction, adapting to changing environments.
+* **Visualization**
+  Real-time visualization with overlays showing detected vehicles, IDs, estimated speeds, and cumulative count.
 
+* **Demo Mode**
+  Simulates synthetic traffic frames for demonstration when no video file is available.
 
-Vehicle Tracking: 
+---
 
-Tracks detected vehicles across frames to count them and estimate their speeds, providing detailed traffic insights.
+## Technologies Used
 
+* **MATLAB**
+  Core development environment for the entire system.
 
-Visualization: 
+* **Image Processing Toolbox**
+  Used for both spatial and frequency domain techniques.
 
-Provides real-time visualization of the processed video with overlays showing detected vehicles, their IDs, estimated speeds, and a cumulative vehicle count.
+* **Computer Vision Techniques**
+  Applied for robust detection and tracking of vehicles.
 
+---
 
-Demo Mode: 
+## How to Use
 
-Includes a simulation mode that generates synthetic traffic frames for testing and demonstration purposes without requiring a video file.
+### 1. Video Input
 
+* Place your traffic video in the project directory and rename it to:
+  `top_view_cuted_resized.mp4`
+* Or modify the `videoReader` line in the script to reference your video file.
 
+### 2. Parameter Adjustment
 
-Technologies Used
+* Update the **Region of Interest (ROI)** coordinates in the script.
+* Tune the **minimum and maximum blob area** thresholds for accurate vehicle detection.
+* Set the position of the **counting line** for vehicle counting.
 
-MATLAB: 
+### 3. Running the Script
 
-Core programming environment for implementing the system.
+* Open MATLAB and navigate to the project directory.
+* Run the main script to begin processing.
+* Output video with annotations and real-time visualization will be generated.
 
+### 4. Demo Mode
 
-Image Processing Toolbox: 
+* If no video is found, the system switches to demo mode with synthetic traffic frames.
 
-Leveraged for spatial and frequency domain processing techniques.
+---
 
+## Applications
 
-Computer Vision Techniques: 
+* **Traffic Monitoring and Management**
+  Real-time vehicle counting and speed estimation for urban planning and control.
 
-Applied for vehicle detection and tracking functionalities.
+* **Congestion Analysis and Prediction**
+  Helps mitigate traffic bottlenecks through pattern insights.
 
+* **Automated Toll Collection Systems**
+  Enables vehicle tracking for toll enforcement systems.
 
+* **Research in Traffic Flow Dynamics**
+  Useful in academic studies and optimization modeling.
 
-How to Use
+---
 
-Video Input:
+## Notes
 
-Place your traffic video file in the project directory and name it top_view_cuted_resized.mp4.
-Alternatively, modify the videoReader line in the script to point to your video file.
+* Optimized for **top-view** traffic videos. Can be adapted for other perspectives.
+* Performance may vary depending on:
 
+  * Video quality
+  * Camera stability
+  * Lighting and environmental conditions
+* For accurate speed estimation, **calibrate** the `distanceCalibrationFactor` according to your setup.
 
-Parameter Adjustment:
+---
 
-Adjust the Region of Interest (ROI) coordinates in the script to focus on the road area in your video.
-Tune the minimum and maximum blob area thresholds to accurately detect vehicles based on their size in the video.
-Set the position of the counting line where vehicles are counted as they pass.
+## Dependencies
 
+* **MATLAB**
+  Version R20XXx or later (update with the version you used)
 
-Running the Script:
-
-Open MATLAB and navigate to the project directory.
-Run the script to start processing the video.
-The system will generate an output video with annotations and display real-time visualization.
-
-
-Demo Mode:
-
-If no video file is found, the system automatically switches to demo mode, generating simulated traffic frames for demonstration.
-
-
-
-Applications
-
-Traffic Monitoring and Management: 
-
-Real-time vehicle counting and speed estimation for urban planning and traffic control.
-
-
-Congestion Analysis and Prediction: 
-
-Insights into traffic patterns to mitigate bottlenecks.
-
-
-Automated Toll Collection Systems: 
-
-Vehicle tracking for toll enforcement.
-
-
-Research in Traffic Flow Dynamics: 
-
-Data collection for academic and optimization studies.
-
-
-
-Notes
-
-The system is optimized for top-view traffic videos but can be adapted for other perspectives with appropriate modifications.
-Performance may vary based on video quality, camera stability, and environmental conditions.
-For accurate speed estimation, calibrate the distanceCalibrationFactor based on your specific camera setup.
-
-Dependencies
-
-MATLAB: 
-
-Version R20XXx or later recommended.
-
-
-Image Processing Toolbox: 
-
-Required for image processing functionalities.
-
-
-
-
-Notes
-The system is optimized for top-view traffic videos but can be adapted for other perspectives with appropriate modifications.
-Performance may vary based on video quality, camera stability, and environmental conditions.
-For accurate speed estimation, calibrate the distanceCalibrationFactor based on your specific camera setup.
-Dependencies
-MATLAB: Version R20XXx or later recommended.
-Image Processing Toolbox: Required for image processing functionalities.
+* **Image Processing Toolbox**
+  Required for core functionalities.
