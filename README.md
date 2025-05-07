@@ -96,7 +96,7 @@ This project implements a **Real-Time Traffic Analytics System** using **MATLAB*
 ## Dependencies
 
 * **MATLAB**
-  Version R20XXx or later (update with the version you used)
+  Version R2021 
 
 * **Image Processing Toolbox**
   Required for core functionalities.
